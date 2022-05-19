@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'cookada_main_windowRTzkMI.ui'
+## Form generated from reading UI file 'cookada_main_windowmQouWu.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(900, 600)
+        MainWindow.resize(1100, 700)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"background-color: rgb(25, 25, 25);")
@@ -126,25 +126,25 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setSpacing(10)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.restoreButton = QPushButton(self.top_right_btns)
-        self.restoreButton.setObjectName(u"restoreButton")
-        self.restoreButton.setCursor(QCursor(Qt.PointingHandCursor))
-        icon1 = QIcon()
-        icon1.addFile(u":/icons/icons/cil-window-maximize.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.restoreButton.setIcon(icon1)
-        self.restoreButton.setIconSize(QSize(24, 24))
-
-        self.horizontalLayout_3.addWidget(self.restoreButton)
-
         self.minimizeButton = QPushButton(self.top_right_btns)
         self.minimizeButton.setObjectName(u"minimizeButton")
         self.minimizeButton.setCursor(QCursor(Qt.PointingHandCursor))
-        icon2 = QIcon()
-        icon2.addFile(u":/icons/icons/cil-minus.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.minimizeButton.setIcon(icon2)
+        icon1 = QIcon()
+        icon1.addFile(u":/icons/icons/cil-minus.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.minimizeButton.setIcon(icon1)
         self.minimizeButton.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_3.addWidget(self.minimizeButton)
+
+        self.restoreButton = QPushButton(self.top_right_btns)
+        self.restoreButton.setObjectName(u"restoreButton")
+        self.restoreButton.setCursor(QCursor(Qt.PointingHandCursor))
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/icons/cil-window-maximize.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.restoreButton.setIcon(icon2)
+        self.restoreButton.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_3.addWidget(self.restoreButton)
 
         self.closeButton = QPushButton(self.top_right_btns)
         self.closeButton.setObjectName(u"closeButton")
@@ -301,6 +301,7 @@ class Ui_MainWindow(object):
         self.login_response_frame.setFrameShape(QFrame.StyledPanel)
         self.login_response_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_4 = QVBoxLayout(self.login_response_frame)
+        self.verticalLayout_4.setSpacing(7)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.login_response_msg = QLabel(self.login_response_frame)
         self.login_response_msg.setObjectName(u"login_response_msg")
@@ -473,6 +474,59 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.addWidget(self.login_form_frame, 0, Qt.AlignHCenter|Qt.AlignVCenter)
 
         self.stackedWidget.addWidget(self.accounts_page)
+        self.recipe_page = QWidget()
+        self.recipe_page.setObjectName(u"recipe_page")
+        self.verticalLayoutWidget = QWidget(self.recipe_page)
+        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
+        self.verticalLayoutWidget.setGeometry(QRect(-1, -1, 1051, 601))
+        self.verticalLayout_11 = QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.recipe_name = QLabel(self.verticalLayoutWidget)
+        self.recipe_name.setObjectName(u"recipe_name")
+        self.recipe_name.setEnabled(False)
+        self.recipe_name.setMaximumSize(QSize(16777215, 100))
+        font4 = QFont()
+        font4.setPointSize(26)
+        self.recipe_name.setFont(font4)
+        self.recipe_name.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_11.addWidget(self.recipe_name)
+
+        self.horizontalLayout_6 = QHBoxLayout()
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.recipe_image = QLabel(self.verticalLayoutWidget)
+        self.recipe_image.setObjectName(u"recipe_image")
+        self.recipe_image.setEnabled(False)
+        self.recipe_image.setMinimumSize(QSize(0, 300))
+        self.recipe_image.setMaximumSize(QSize(16777215, 300))
+        self.recipe_image.setFont(font4)
+        self.recipe_image.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_6.addWidget(self.recipe_image)
+
+        self.recipe_ingridients = QLabel(self.verticalLayoutWidget)
+        self.recipe_ingridients.setObjectName(u"recipe_ingridients")
+        self.recipe_ingridients.setEnabled(False)
+        self.recipe_ingridients.setMinimumSize(QSize(0, 300))
+        self.recipe_ingridients.setMaximumSize(QSize(16777215, 300))
+        self.recipe_ingridients.setFont(font4)
+        self.recipe_ingridients.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_6.addWidget(self.recipe_ingridients)
+
+
+        self.verticalLayout_11.addLayout(self.horizontalLayout_6)
+
+        self.recipe_description = QLabel(self.verticalLayoutWidget)
+        self.recipe_description.setObjectName(u"recipe_description")
+        self.recipe_description.setEnabled(False)
+        self.recipe_description.setFont(font4)
+        self.recipe_description.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_11.addWidget(self.recipe_description)
+
+        self.stackedWidget.addWidget(self.recipe_page)
         self.settings_page = QWidget()
         self.settings_page.setObjectName(u"settings_page")
         self.settings_page.setStyleSheet(u"")
@@ -523,7 +577,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(2)
         self.login_res_ok_btn.setDefault(False)
 
 
@@ -534,8 +588,8 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.left_menu_toggle_btn.setText("")
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Cookada Desk-Top App", None))
-        self.restoreButton.setText("")
         self.minimizeButton.setText("")
+        self.restoreButton.setText("")
         self.closeButton.setText("")
         self.accounts_button.setText(QCoreApplication.translate("MainWindow", u"ACCOUNT", None))
         self.home_button.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
@@ -549,6 +603,10 @@ class Ui_MainWindow(object):
         self.password.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Password", None))
         self.checkBox.setText(QCoreApplication.translate("MainWindow", u"Keep me logged in", None))
         self.login_btn.setText(QCoreApplication.translate("MainWindow", u"Login", None))
+        self.recipe_name.setText(QCoreApplication.translate("MainWindow", u"Recipe name", None))
+        self.recipe_image.setText(QCoreApplication.translate("MainWindow", u"Recipe image", None))
+        self.recipe_ingridients.setText(QCoreApplication.translate("MainWindow", u"Ingredients (+ checkbox)", None))
+        self.recipe_description.setText(QCoreApplication.translate("MainWindow", u"Description", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Setttings Page", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"v 1.0", None))
     # retranslateUi
