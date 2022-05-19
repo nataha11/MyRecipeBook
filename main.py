@@ -100,6 +100,7 @@ class MainWindow(QMainWindow):
         self.ui.login_response_frame.hide()
         #Hiding login response container after OK button is pressed:
         self.ui.login_res_ok_btn.clicked.connect(lambda:self.ui.login_response_frame.hide())
+        #
 
 
         # ###############################################
