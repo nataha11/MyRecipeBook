@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'cookada_main_windowmQouWu.ui'
+## Form generated from reading UI file 'cookada_main_windowgMqIKL.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1100, 700)
+        MainWindow.resize(1076, 726)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"background-color: rgb(25, 25, 25);")
@@ -476,13 +476,37 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.accounts_page)
         self.recipe_page = QWidget()
         self.recipe_page.setObjectName(u"recipe_page")
-        self.verticalLayoutWidget = QWidget(self.recipe_page)
-        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(-1, -1, 1051, 601))
-        self.verticalLayout_11 = QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
-        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.recipe_name = QLabel(self.verticalLayoutWidget)
+        self.recipe_page.setMinimumSize(QSize(0, 0))
+        self.recipe_page.setMaximumSize(QSize(16777215, 16777215))
+        self.verticalLayout_10 = QVBoxLayout(self.recipe_page)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.scroll_area = QScrollArea(self.recipe_page)
+        self.scroll_area.setObjectName(u"scroll_area")
+        self.scroll_area.setMinimumSize(QSize(1000, 600))
+        self.scroll_area.setWidgetResizable(True)
+        self.scroll_area.setAlignment(Qt.AlignCenter)
+        self.scroll_contents = QWidget()
+        self.scroll_contents.setObjectName(u"scroll_contents")
+        self.scroll_contents.setGeometry(QRect(0, 0, 1000, 1000))
+        self.scroll_contents.setMinimumSize(QSize(1000, 1000))
+        self.scroll_contents.setMaximumSize(QSize(16777215, 16777215))
+        self.gridLayout_2 = QGridLayout(self.scroll_contents)
+        self.gridLayout_2.setSpacing(10)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setContentsMargins(5, 5, 5, 5)
+        self.frame = QFrame(self.scroll_contents)
+        self.frame.setObjectName(u"frame")
+        self.frame.setMinimumSize(QSize(0, 0))
+        self.frame.setMaximumSize(QSize(16777215, 16777215))
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_13 = QVBoxLayout(self.frame)
+        self.verticalLayout_13.setSpacing(10)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.verticalLayout_13.setContentsMargins(5, 5, 5, 5)
+        self.verticalLayout_12 = QVBoxLayout()
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.recipe_name = QLabel(self.frame)
         self.recipe_name.setObjectName(u"recipe_name")
         self.recipe_name.setEnabled(False)
         self.recipe_name.setMaximumSize(QSize(16777215, 100))
@@ -491,11 +515,11 @@ class Ui_MainWindow(object):
         self.recipe_name.setFont(font4)
         self.recipe_name.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_11.addWidget(self.recipe_name)
+        self.verticalLayout_12.addWidget(self.recipe_name)
 
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.recipe_image = QLabel(self.verticalLayoutWidget)
+        self.recipe_image = QLabel(self.frame)
         self.recipe_image.setObjectName(u"recipe_image")
         self.recipe_image.setEnabled(False)
         self.recipe_image.setMinimumSize(QSize(0, 300))
@@ -505,7 +529,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_6.addWidget(self.recipe_image)
 
-        self.recipe_ingridients = QLabel(self.verticalLayoutWidget)
+        self.recipe_ingridients = QLabel(self.frame)
         self.recipe_ingridients.setObjectName(u"recipe_ingridients")
         self.recipe_ingridients.setEnabled(False)
         self.recipe_ingridients.setMinimumSize(QSize(0, 300))
@@ -516,15 +540,25 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.addWidget(self.recipe_ingridients)
 
 
-        self.verticalLayout_11.addLayout(self.horizontalLayout_6)
+        self.verticalLayout_12.addLayout(self.horizontalLayout_6)
 
-        self.recipe_description = QLabel(self.verticalLayoutWidget)
+        self.recipe_description = QLabel(self.frame)
         self.recipe_description.setObjectName(u"recipe_description")
         self.recipe_description.setEnabled(False)
         self.recipe_description.setFont(font4)
         self.recipe_description.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_11.addWidget(self.recipe_description)
+        self.verticalLayout_12.addWidget(self.recipe_description)
+
+
+        self.verticalLayout_13.addLayout(self.verticalLayout_12)
+
+
+        self.gridLayout_2.addWidget(self.frame, 0, 0, 1, 1)
+
+        self.scroll_area.setWidget(self.scroll_contents)
+
+        self.verticalLayout_10.addWidget(self.scroll_area)
 
         self.stackedWidget.addWidget(self.recipe_page)
         self.settings_page = QWidget()
@@ -563,15 +597,15 @@ class Ui_MainWindow(object):
 "}")
         self.main_footer.setFrameShape(QFrame.WinPanel)
         self.main_footer.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_10 = QVBoxLayout(self.main_footer)
-        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.gridLayout = QGridLayout(self.main_footer)
+        self.gridLayout.setObjectName(u"gridLayout")
         self.label_7 = QLabel(self.main_footer)
         self.label_7.setObjectName(u"label_7")
 
-        self.verticalLayout_10.addWidget(self.label_7)
+        self.gridLayout.addWidget(self.label_7, 0, 0, 1, 1)
 
 
-        self.verticalLayout.addWidget(self.main_footer, 0, Qt.AlignTop)
+        self.verticalLayout.addWidget(self.main_footer)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
