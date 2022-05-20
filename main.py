@@ -93,10 +93,10 @@ class MainWindow(QMainWindow):
         #navigate to Settings page
         self.ui.settings_button.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.settings_page))
         #Тут необходимо добавить вызов recipe_page для обработки кнопок на home_page
-        self.ui.first_recipe_but.clicked.connect(partial(self.createRecipePage, self.ui.first_recipe_but.text()))
-        self.ui.second_recipe_but.clicked.connect(partial(self.createRecipePage, self.ui.second_recipe_but.text()))
-        self.ui.third_recipe_but.clicked.connect(partial(self.createRecipePage, self.ui.third_recipe_but.text()))
-        self.ui.fourth_recipe_but.clicked.connect(partial(self.createRecipePage, self.ui.fourth_recipe_but.text()))
+        self.ui.first_recipe_btn.clicked.connect(partial(self.createRecipePage, self.ui.first_recipe_btn.text()))
+        self.ui.second_recipe_btn.clicked.connect(partial(self.createRecipePage, self.ui.second_recipe_btn.text()))
+        self.ui.third_recipe_btn.clicked.connect(partial(self.createRecipePage, self.ui.third_recipe_btn.text()))
+        self.ui.fourth_recipe_btn.clicked.connect(partial(self.createRecipePage, self.ui.fourth_recipe_btn.text()))
 
 
         # ###############################################
