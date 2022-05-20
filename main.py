@@ -5,6 +5,8 @@
 import sys
 import os
 import platform
+import sqlite3
+from functools import partial
 from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
@@ -90,6 +92,12 @@ class MainWindow(QMainWindow):
         self.ui.accounts_button.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.accounts_page))
         #navigate to Settings page
         self.ui.settings_button.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.settings_page))
+        #Тут необходимо добавить вызов recipe_page для обработки кнопок на home_page
+        self.ui.first_recipe_but.clicked.connect(partial(self.createRecipePage, self.ui.first_recipe_but.text()))
+        self.ui.second_recipe_but.clicked.connect(partial(self.createRecipePage, self.ui.second_recipe_but.text()))
+        self.ui.third_recipe_but.clicked.connect(partial(self.createRecipePage, self.ui.third_recipe_but.text()))
+        self.ui.fourth_recipe_but.clicked.connect(partial(self.createRecipePage, self.ui.fourth_recipe_but.text()))
+
 
         # ###############################################
         # LOGIN PAGE
@@ -165,6 +173,51 @@ class MainWindow(QMainWindow):
             self.showNormal()
             # Update button icon when window is minimized
             self.ui.restoreButton.setIcon(QtGui.QIcon(u":/icons/icons/cil-window-maximize.png"))#Show maximize icon
+
+    ################################################
+    # Обработка поискового запроса. Сначала попытемся сделать простейший поиск по названию блюда
+    ################################################
+
+    def createRecipePage(self, recipeName):
+        print("HUY")
+        db_catalog = "recipebook/db"
+        conn = sqlite3.connect(db_catalog + "/recipebook.db", timeout=10)
+        cur = conn.cursor()
+        cur.execute('''
+    			SELECT recipes.id, description, instruction, ingredeints, images.id
+    			FROM recipes 
+    			JOIN images_in_recipes ON recipes.id = images_in_recipes.recipe_id
+    			JOIN images ON images_in_recipes.image_id = images.id
+    			WHERE recipes.name = (?) ''', (recipeName,))
+        data = cur.fetchall()
+        conn.close()
+        print(data)
+
+
+        # decriptionPath = db_catalog + "/" + data[0][1]
+        # instructionPath = db_catalog + "/" + data[0][2]
+        # ingredientsPath = db_catalog + "/" + data[0][3]
+
+        images_path = []
+        for elem in data: images_path.append(elem[-1])
+
+        def get_info(path) -> str:
+            f = open(path, "r")
+            info = f.read()
+            f.close()
+            return info
+
+        description = get_info(db_catalog + "/" + data[0][1])
+        instruction = get_info(db_catalog + "/" + data[0][2])
+        ingridients = get_info(db_catalog + "/" + data[0][3])
+
+        # дальше нужно высрать текст на label и картинки(до них хранятся пути)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.recipe_page)
+        #self.ui.recipe_description.setText(QCoreApplication.translate("MainWindow", description, None))
+        self.ui.recipe_description.setText(QCoreApplication.translate("MainWindow", instruction, None))
+        self.ui.recipe_ingridients.setText(QCoreApplication.translate("MainWindow", ingridients, None))
+        self.ui.recipe_name.setText(QCoreApplication.translate("MainWindow", recipeName, None))
+
 
     #################################################
     # LOGIN VALIDATION SECTION
