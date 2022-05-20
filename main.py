@@ -224,14 +224,18 @@ class MainWindow(QMainWindow):
         #         break
 
         self.ui.recipe_description.setReadOnly(True)
-        self.ui.recipe_description.setWordWrapMode(QTextOption.WrapAnywhere)
-        self.ui.recipe_description.setFontUnderline(40)
+        self.ui.recipe_description.setTextColor(QColor(62, 154, 62))
+        self.ui.recipe_description.setWordWrapMode(QTextOption.WordWrap)
+        self.ui.recipe_description.setFont(QFont("Times", 20))
+        self.ui.recipe_description.setFontUnderline(20)
         self.ui.recipe_description.setText("Инструкция по приготовлению")
         self.ui.recipe_description.setText(QCoreApplication.translate("MainWindow", instruction, None))
 
         self.ui.recipe_ingridients.setReadOnly(True)
-        self.ui.recipe_ingridients.setWordWrapMode(QTextOption.WrapAnywhere)
-        self.ui.recipe_ingridients.setFontItalic(40)
+        self.ui.recipe_ingridients.setTextColor(QColor(62, 154, 62))
+        self.ui.recipe_ingridients.setWordWrapMode(QTextOption.WordWrap)
+        self.ui.recipe_ingridients.setFont(QFont("Times", 20))
+        self.ui.recipe_ingridients.setFontItalic(20)
         self.ui.recipe_ingridients.setText("Необходимые ингридиенты")
         self.ui.recipe_ingridients.setPlainText(QCoreApplication.translate("MainWindow", ingridients, None))
         
