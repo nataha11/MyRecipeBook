@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'cookada_main_windowohIiGw.ui'
+## Form generated from reading UI file 'cookada_main_windowNOBlEv.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1076, 751)
+        MainWindow.resize(1115, 726)
         MainWindow.setLayoutDirection(Qt.LeftToRight)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -648,7 +648,7 @@ class Ui_MainWindow(object):
         self.scroll_area.setAlignment(Qt.AlignCenter)
         self.scroll_contents = QWidget()
         self.scroll_contents.setObjectName(u"scroll_contents")
-        self.scroll_contents.setGeometry(QRect(0, 0, 1000, 1000))
+        self.scroll_contents.setGeometry(QRect(0, 0, 1016, 1000))
         self.scroll_contents.setMinimumSize(QSize(1000, 1000))
         self.scroll_contents.setMaximumSize(QSize(16777215, 16777215))
         self.gridLayout_2 = QGridLayout(self.scroll_contents)
@@ -681,44 +681,42 @@ class Ui_MainWindow(object):
 
         self.vert_layout.addWidget(self.recipe_name)
 
-        self.hor_layout = QHBoxLayout()
-        self.hor_layout.setObjectName(u"hor_layout")
+        self.horizontalLayout_6 = QHBoxLayout()
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.recipe_image = QLabel(self.recipe_description_frame)
         self.recipe_image.setObjectName(u"recipe_image")
         self.recipe_image.setEnabled(False)
-        self.recipe_image.setMinimumSize(QSize(0, 300))
-        self.recipe_image.setMaximumSize(QSize(16777215, 300))
+        self.recipe_image.setMinimumSize(QSize(400, 300))
+        self.recipe_image.setMaximumSize(QSize(16777215, 16777215))
         self.recipe_image.setFont(font3)
         self.recipe_image.setStyleSheet(u"border:3px solid  rgb(43, 31, 91);\n"
-"border-color: rgb(100, 100, 255);\n"
-"border-radius: 10px;")
-        self.recipe_image.setAlignment(Qt.AlignCenter)
-
-        self.hor_layout.addWidget(self.recipe_image)
-
-        self.recipe_ingridients = QLabel(self.recipe_description_frame)
-        self.recipe_ingridients.setObjectName(u"recipe_ingridients")
-        self.recipe_ingridients.setEnabled(False)
-        self.recipe_ingridients.setMinimumSize(QSize(0, 300))
-        self.recipe_ingridients.setMaximumSize(QSize(16777215, 300))
-        self.recipe_ingridients.setFont(font3)
-        self.recipe_ingridients.setStyleSheet(u"border:3px solid  rgb(43, 31, 91);\n"
 "border-color: rgb(197, 106, 32);\n"
 "border-radius: 10px\n"
-"\n"
 "")
-        self.recipe_ingridients.setAlignment(Qt.AlignCenter)
+        self.recipe_image.setAlignment(Qt.AlignCenter)
 
-        self.hor_layout.addWidget(self.recipe_ingridients)
+        self.horizontalLayout_6.addWidget(self.recipe_image)
+
+        self.recipe_ingridients = QTextEdit(self.recipe_description_frame)
+        self.recipe_ingridients.setObjectName(u"recipe_ingridients")
+        self.recipe_ingridients.setMinimumSize(QSize(400, 300))
+        self.recipe_ingridients.setStyleSheet(u"background-color:rgb(25, 25, 25);\n"
+"border:3px solid;\n"
+"border-color: rgb(197, 106, 32);\n"
+"border-radius: 10px;")
+        self.recipe_ingridients.setLineWidth(5)
+
+        self.horizontalLayout_6.addWidget(self.recipe_ingridients)
 
 
-        self.vert_layout.addLayout(self.hor_layout)
+        self.vert_layout.addLayout(self.horizontalLayout_6)
 
-        self.recipe_description = QLabel(self.recipe_description_frame)
+        self.recipe_description = QTextEdit(self.recipe_description_frame)
         self.recipe_description.setObjectName(u"recipe_description")
-        self.recipe_description.setEnabled(False)
-        self.recipe_description.setFont(font3)
-        self.recipe_description.setAlignment(Qt.AlignCenter)
+        self.recipe_description.setStyleSheet(u"background-color:rgb(25, 25, 25);\n"
+"border:3px solid;\n"
+"border-color: rgb(197, 106, 32);\n"
+"border-radius: 10px;")
 
         self.vert_layout.addWidget(self.recipe_description)
 
@@ -821,8 +819,6 @@ class Ui_MainWindow(object):
         self.login_btn.setText(QCoreApplication.translate("MainWindow", u"Login", None))
         self.recipe_name.setText(QCoreApplication.translate("MainWindow", u"Recipe name", None))
         self.recipe_image.setText(QCoreApplication.translate("MainWindow", u"Recipe image", None))
-        self.recipe_ingridients.setText(QCoreApplication.translate("MainWindow", u"Ingredients (+ checkbox)", None))
-        self.recipe_description.setText(QCoreApplication.translate("MainWindow", u"Description", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Setttings Page", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"v 1.0", None))
     # retranslateUi
