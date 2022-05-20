@@ -214,9 +214,30 @@ class MainWindow(QMainWindow):
         # дальше нужно высрать текст на label и картинки(до них хранятся пути)
         self.ui.stackedWidget.setCurrentWidget(self.ui.recipe_page)
         #self.ui.recipe_description.setText(QCoreApplication.translate("MainWindow", description, None))
+        
+        # self.ui.recipe_description.setText("Способ приготовления блюда: \n" + QCoreApplication.translate("MainWindow", instruction, None))
+        
+        # for i in range(20, 10, -1):
+        #     if not self.ui.recipe_description.hasScaledContents():
+        #         self.ui.recipe_description.setFont(QFont("Times", i))
+        #         self.ui.recipe_description.setText("Способ приготовления блюда: \n" + QCoreApplication.translate("MainWindow", instruction, None))
+        #         break
+
+        self.ui.recipe_description.setReadOnly(True)
+        self.ui.recipe_description.setWordWrapMode(QTextOption.WrapAnywhere)
+        self.ui.recipe_description.setFontUnderline(40)
+        self.ui.recipe_description.setText("Инструкция по приготовлению")
         self.ui.recipe_description.setText(QCoreApplication.translate("MainWindow", instruction, None))
-        self.ui.recipe_ingridients.setText(QCoreApplication.translate("MainWindow", ingridients, None))
-        self.ui.recipe_name.setText(QCoreApplication.translate("MainWindow", recipeName, None))
+
+        self.ui.recipe_ingridients.setReadOnly(True)
+        self.ui.recipe_ingridients.setWordWrapMode(QTextOption.WrapAnywhere)
+        self.ui.recipe_ingridients.setFontItalic(40)
+        self.ui.recipe_ingridients.setText("Необходимые ингридиенты")
+        self.ui.recipe_ingridients.setPlainText(QCoreApplication.translate("MainWindow", ingridients, None))
+        
+        self.ui.recipe_name.setFont(QFont("Times", 25))
+        self.ui.recipe_name.setStyleSheet('color:white')
+        self.ui.recipe_name.setText(QCoreApplication.translate("MainWindow", recipeName, None).upper())
 
 
     #################################################
