@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1076</width>
-    <height>726</height>
+    <height>751</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -527,7 +527,7 @@ background-position: center left;</string>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_7">
               <item>
-               <widget class="QLineEdit" name="lineEdit">
+               <widget class="QLineEdit" name="ingridient">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -547,7 +547,7 @@ background-position: center left;</string>
                    </size>
                   </property>
                   <property name="text">
-                   <string>PushButton</string>
+                   <string>pasta</string>
                   </property>
                  </widget>
                 </item>
@@ -560,7 +560,7 @@ background-position: center left;</string>
                    </size>
                   </property>
                   <property name="text">
-                   <string>PushButton</string>
+                   <string>poridge</string>
                   </property>
                  </widget>
                 </item>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'cookada_main_windowgMqIKL.ui'
+## Form generated from reading UI file 'cookada_main_windowTDiqrw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -18,7 +18,8 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1076, 726)
+        MainWindow.resize(1076, 751)
+        MainWindow.setLayoutDirection(Qt.LeftToRight)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"background-color: rgb(25, 25, 25);")
@@ -258,17 +259,60 @@ class Ui_MainWindow(object):
         self.home_page.setStyleSheet(u"")
         self.verticalLayout_7 = QVBoxLayout(self.home_page)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.label = QLabel(self.home_page)
-        self.label.setObjectName(u"label")
-        font1 = QFont()
-        font1.setPointSize(50)
-        font1.setBold(True)
-        font1.setWeight(75)
-        self.label.setFont(font1)
-        self.label.setStyleSheet(u"background-color: rgb(84, 84, 84);")
-        self.label.setAlignment(Qt.AlignCenter)
+        self.ingridient = QLineEdit(self.home_page)
+        self.ingridient.setObjectName(u"ingridient")
+        self.ingridient.setMinimumSize(QSize(0, 50))
 
-        self.verticalLayout_7.addWidget(self.label, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+        self.verticalLayout_7.addWidget(self.ingridient)
+
+        self.gridLayout_3 = QGridLayout()
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.first_recipe_but = QPushButton(self.home_page)
+        self.first_recipe_but.setObjectName(u"first_recipe_but")
+        self.first_recipe_but.setMinimumSize(QSize(0, 200))
+
+        self.gridLayout_3.addWidget(self.first_recipe_but, 0, 0, 1, 1)
+
+        self.second_recipe_but = QPushButton(self.home_page)
+        self.second_recipe_but.setObjectName(u"second_recipe_but")
+        self.second_recipe_but.setMinimumSize(QSize(0, 200))
+
+        self.gridLayout_3.addWidget(self.second_recipe_but, 0, 1, 1, 1)
+
+        self.fourth_recipe_but = QPushButton(self.home_page)
+        self.fourth_recipe_but.setObjectName(u"fourth_recipe_but")
+        self.fourth_recipe_but.setMinimumSize(QSize(300, 200))
+
+        self.gridLayout_3.addWidget(self.fourth_recipe_but, 1, 1, 1, 1)
+
+        self.third_recipe_but = QPushButton(self.home_page)
+        self.third_recipe_but.setObjectName(u"third_recipe_but")
+        self.third_recipe_but.setMinimumSize(QSize(0, 200))
+
+        self.gridLayout_3.addWidget(self.third_recipe_but, 1, 0, 1, 1)
+
+
+        self.verticalLayout_7.addLayout(self.gridLayout_3)
+
+        self.gridLayout_4 = QGridLayout()
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.frame_2 = QFrame(self.home_page)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setMinimumSize(QSize(300, 150))
+        self.frame_2.setMaximumSize(QSize(300, 150))
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.ok_but = QPushButton(self.frame_2)
+        self.ok_but.setObjectName(u"ok_but")
+        self.ok_but.setGeometry(QRect(100, 100, 93, 28))
+        self.error_label = QLabel(self.frame_2)
+        self.error_label.setObjectName(u"error_label")
+        self.error_label.setGeometry(QRect(120, 30, 55, 16))
+
+        self.gridLayout_4.addWidget(self.frame_2, 0, 0, 1, 1)
+
+
+        self.verticalLayout_7.addLayout(self.gridLayout_4)
 
         self.stackedWidget.addWidget(self.home_page)
         self.accounts_page = QWidget()
@@ -305,9 +349,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.login_response_msg = QLabel(self.login_response_frame)
         self.login_response_msg.setObjectName(u"login_response_msg")
-        font2 = QFont()
-        font2.setFamily(u"Times New Roman")
-        self.login_response_msg.setFont(font2)
+        font1 = QFont()
+        font1.setFamily(u"Times New Roman")
+        self.login_response_msg.setFont(font1)
         self.login_response_msg.setLayoutDirection(Qt.LeftToRight)
         self.login_response_msg.setAlignment(Qt.AlignCenter)
 
@@ -403,10 +447,10 @@ class Ui_MainWindow(object):
         self.label_2 = QLabel(self.input_fileds_frame)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMinimumSize(QSize(100, 50))
-        font3 = QFont()
-        font3.setBold(True)
-        font3.setWeight(75)
-        self.label_2.setFont(font3)
+        font2 = QFont()
+        font2.setBold(True)
+        font2.setWeight(75)
+        self.label_2.setFont(font2)
         self.label_2.setStyleSheet(u"")
         self.label_2.setAlignment(Qt.AlignCenter)
 
@@ -425,7 +469,7 @@ class Ui_MainWindow(object):
         self.label_5 = QLabel(self.input_fileds_frame)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setMinimumSize(QSize(100, 50))
-        self.label_5.setFont(font3)
+        self.label_5.setFont(font2)
         self.label_5.setStyleSheet(u"")
         self.label_5.setAlignment(Qt.AlignCenter)
 
@@ -510,9 +554,9 @@ class Ui_MainWindow(object):
         self.recipe_name.setObjectName(u"recipe_name")
         self.recipe_name.setEnabled(False)
         self.recipe_name.setMaximumSize(QSize(16777215, 100))
-        font4 = QFont()
-        font4.setPointSize(26)
-        self.recipe_name.setFont(font4)
+        font3 = QFont()
+        font3.setPointSize(26)
+        self.recipe_name.setFont(font3)
         self.recipe_name.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_12.addWidget(self.recipe_name)
@@ -524,7 +568,7 @@ class Ui_MainWindow(object):
         self.recipe_image.setEnabled(False)
         self.recipe_image.setMinimumSize(QSize(0, 300))
         self.recipe_image.setMaximumSize(QSize(16777215, 300))
-        self.recipe_image.setFont(font4)
+        self.recipe_image.setFont(font3)
         self.recipe_image.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_6.addWidget(self.recipe_image)
@@ -534,7 +578,7 @@ class Ui_MainWindow(object):
         self.recipe_ingridients.setEnabled(False)
         self.recipe_ingridients.setMinimumSize(QSize(0, 300))
         self.recipe_ingridients.setMaximumSize(QSize(16777215, 300))
-        self.recipe_ingridients.setFont(font4)
+        self.recipe_ingridients.setFont(font3)
         self.recipe_ingridients.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_6.addWidget(self.recipe_ingridients)
@@ -545,7 +589,7 @@ class Ui_MainWindow(object):
         self.recipe_description = QLabel(self.frame)
         self.recipe_description.setObjectName(u"recipe_description")
         self.recipe_description.setEnabled(False)
-        self.recipe_description.setFont(font4)
+        self.recipe_description.setFont(font3)
         self.recipe_description.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_12.addWidget(self.recipe_description)
@@ -568,7 +612,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.label_4 = QLabel(self.settings_page)
         self.label_4.setObjectName(u"label_4")
-        self.label_4.setFont(font1)
+        font4 = QFont()
+        font4.setPointSize(50)
+        font4.setBold(True)
+        font4.setWeight(75)
+        self.label_4.setFont(font4)
         self.label_4.setStyleSheet(u"background-color: rgb(84, 84, 84);")
         self.label_4.setAlignment(Qt.AlignCenter)
 
@@ -611,7 +659,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
         self.login_res_ok_btn.setDefault(False)
 
 
@@ -628,7 +676,12 @@ class Ui_MainWindow(object):
         self.accounts_button.setText(QCoreApplication.translate("MainWindow", u"ACCOUNT", None))
         self.home_button.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
         self.settings_button.setText(QCoreApplication.translate("MainWindow", u"SETTINGS", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Home Page", None))
+        self.first_recipe_but.setText(QCoreApplication.translate("MainWindow", u"pasta", None))
+        self.second_recipe_but.setText(QCoreApplication.translate("MainWindow", u"poridge", None))
+        self.fourth_recipe_but.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.third_recipe_but.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.ok_but.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.error_label.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.login_response_msg.setText(QCoreApplication.translate("MainWindow", u"Login response message", None))
         self.login_res_ok_btn.setText(QCoreApplication.translate("MainWindow", u"OK", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Username", None))
