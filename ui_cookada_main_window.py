@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'cookada_main_windowTDiqrw.ui'
+## Form generated from reading UI file 'cookada_main_windowohIiGw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -259,60 +259,181 @@ class Ui_MainWindow(object):
         self.home_page.setStyleSheet(u"")
         self.verticalLayout_7 = QVBoxLayout(self.home_page)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.ingridient = QLineEdit(self.home_page)
-        self.ingridient.setObjectName(u"ingridient")
-        self.ingridient.setMinimumSize(QSize(0, 50))
+        self.search_line = QLineEdit(self.home_page)
+        self.search_line.setObjectName(u"search_line")
+        self.search_line.setMinimumSize(QSize(0, 50))
 
-        self.verticalLayout_7.addWidget(self.ingridient)
+        self.verticalLayout_7.addWidget(self.search_line)
 
-        self.gridLayout_3 = QGridLayout()
-        self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.first_recipe_but = QPushButton(self.home_page)
-        self.first_recipe_but.setObjectName(u"first_recipe_but")
-        self.first_recipe_but.setMinimumSize(QSize(0, 200))
+        self.recipes_grid = QGridLayout()
+        self.recipes_grid.setObjectName(u"recipes_grid")
+        self.second_recipe_btn = QPushButton(self.home_page)
+        self.second_recipe_btn.setObjectName(u"second_recipe_btn")
+        self.second_recipe_btn.setMinimumSize(QSize(0, 200))
+        self.second_recipe_btn.setStyleSheet(u"QPushButton{\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(0, 0, 0);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(0, 69, 116);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"	background-color: rgb(0, 136, 255);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"")
 
-        self.gridLayout_3.addWidget(self.first_recipe_but, 0, 0, 1, 1)
+        self.recipes_grid.addWidget(self.second_recipe_btn, 0, 2, 1, 1)
 
-        self.second_recipe_but = QPushButton(self.home_page)
-        self.second_recipe_but.setObjectName(u"second_recipe_but")
-        self.second_recipe_but.setMinimumSize(QSize(0, 200))
+        self.third_recipe_btn = QPushButton(self.home_page)
+        self.third_recipe_btn.setObjectName(u"third_recipe_btn")
+        self.third_recipe_btn.setMinimumSize(QSize(0, 200))
+        self.third_recipe_btn.setStyleSheet(u"QPushButton{\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(0, 0, 0);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(0, 69, 116);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"	background-color: rgb(0, 136, 255);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"")
 
-        self.gridLayout_3.addWidget(self.second_recipe_but, 0, 1, 1, 1)
+        self.recipes_grid.addWidget(self.third_recipe_btn, 2, 0, 1, 1)
 
-        self.fourth_recipe_but = QPushButton(self.home_page)
-        self.fourth_recipe_but.setObjectName(u"fourth_recipe_but")
-        self.fourth_recipe_but.setMinimumSize(QSize(300, 200))
+        self.fourth_recipe_btn = QPushButton(self.home_page)
+        self.fourth_recipe_btn.setObjectName(u"fourth_recipe_btn")
+        self.fourth_recipe_btn.setMinimumSize(QSize(300, 200))
+        self.fourth_recipe_btn.setStyleSheet(u"QPushButton{\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(0, 0, 0);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(0, 69, 116);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"	background-color: rgb(0, 136, 255);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"")
 
-        self.gridLayout_3.addWidget(self.fourth_recipe_but, 1, 1, 1, 1)
+        self.recipes_grid.addWidget(self.fourth_recipe_btn, 2, 2, 1, 1)
 
-        self.third_recipe_but = QPushButton(self.home_page)
-        self.third_recipe_but.setObjectName(u"third_recipe_but")
-        self.third_recipe_but.setMinimumSize(QSize(0, 200))
+        self.first_recipe_btn = QPushButton(self.home_page)
+        self.first_recipe_btn.setObjectName(u"first_recipe_btn")
+        self.first_recipe_btn.setMinimumSize(QSize(0, 200))
+        self.first_recipe_btn.setStyleSheet(u"QPushButton{\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(0, 0, 0);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(0, 69, 116);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"	background-color: rgb(0, 136, 255);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"")
 
-        self.gridLayout_3.addWidget(self.third_recipe_but, 1, 0, 1, 1)
+        self.recipes_grid.addWidget(self.first_recipe_btn, 0, 0, 1, 1)
 
 
-        self.verticalLayout_7.addLayout(self.gridLayout_3)
+        self.verticalLayout_7.addLayout(self.recipes_grid)
 
-        self.gridLayout_4 = QGridLayout()
-        self.gridLayout_4.setObjectName(u"gridLayout_4")
-        self.frame_2 = QFrame(self.home_page)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setMinimumSize(QSize(300, 150))
-        self.frame_2.setMaximumSize(QSize(300, 150))
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
-        self.ok_but = QPushButton(self.frame_2)
-        self.ok_but.setObjectName(u"ok_but")
-        self.ok_but.setGeometry(QRect(100, 100, 93, 28))
-        self.error_label = QLabel(self.frame_2)
-        self.error_label.setObjectName(u"error_label")
-        self.error_label.setGeometry(QRect(120, 30, 55, 16))
+        self.search_response_layout = QHBoxLayout()
+        self.search_response_layout.setObjectName(u"search_response_layout")
+        self.search_response_frame = QFrame(self.home_page)
+        self.search_response_frame.setObjectName(u"search_response_frame")
+        self.search_response_frame.setMinimumSize(QSize(400, 100))
+        self.search_response_frame.setMaximumSize(QSize(800, 300))
+        self.search_response_frame.setFrameShape(QFrame.StyledPanel)
+        self.search_response_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_7 = QHBoxLayout(self.search_response_frame)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.search_response_frame_2 = QFrame(self.search_response_frame)
+        self.search_response_frame_2.setObjectName(u"search_response_frame_2")
+        self.search_response_frame_2.setMinimumSize(QSize(400, 100))
+        self.search_response_frame_2.setMaximumSize(QSize(800, 300))
+        self.search_response_frame_2.setStyleSheet(u"QFrame{\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(0, 0, 0);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"QPushButton{\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(0, 69, 116);\n"
+"	border: none;\n"
+"	border-radius: 10px;\n"
+"}\n"
+"QLabel{\n"
+"	padding: 10px;\n"
+"	border: none;\n"
+"	\n"
+"}")
+        self.search_response_frame_2.setFrameShape(QFrame.StyledPanel)
+        self.search_response_frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_11 = QVBoxLayout(self.search_response_frame_2)
+        self.verticalLayout_11.setSpacing(7)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.search_response_msg = QLabel(self.search_response_frame_2)
+        self.search_response_msg.setObjectName(u"search_response_msg")
+        font1 = QFont()
+        font1.setFamily(u"Times New Roman")
+        self.search_response_msg.setFont(font1)
+        self.search_response_msg.setLayoutDirection(Qt.LeftToRight)
+        self.search_response_msg.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_4.addWidget(self.frame_2, 0, 0, 1, 1)
+        self.verticalLayout_11.addWidget(self.search_response_msg)
+
+        self.search_response_btn = QPushButton(self.search_response_frame_2)
+        self.search_response_btn.setObjectName(u"search_response_btn")
+        self.search_response_btn.setEnabled(True)
+        self.search_response_btn.setMinimumSize(QSize(80, 50))
+        self.search_response_btn.setMaximumSize(QSize(80, 50))
+        self.search_response_btn.setAutoDefault(False)
+        self.search_response_btn.setFlat(False)
+
+        self.verticalLayout_11.addWidget(self.search_response_btn, 0, Qt.AlignHCenter)
 
 
-        self.verticalLayout_7.addLayout(self.gridLayout_4)
+        self.horizontalLayout_7.addWidget(self.search_response_frame_2)
+
+
+        self.search_response_layout.addWidget(self.search_response_frame)
+
+
+        self.verticalLayout_7.addLayout(self.search_response_layout)
 
         self.stackedWidget.addWidget(self.home_page)
         self.accounts_page = QWidget()
@@ -349,8 +470,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.login_response_msg = QLabel(self.login_response_frame)
         self.login_response_msg.setObjectName(u"login_response_msg")
-        font1 = QFont()
-        font1.setFamily(u"Times New Roman")
         self.login_response_msg.setFont(font1)
         self.login_response_msg.setLayoutDirection(Qt.LeftToRight)
         self.login_response_msg.setAlignment(Qt.AlignCenter)
@@ -442,8 +561,6 @@ class Ui_MainWindow(object):
         self.input_fileds_frame.setFrameShadow(QFrame.Raised)
         self.formLayout_2 = QFormLayout(self.input_fileds_frame)
         self.formLayout_2.setObjectName(u"formLayout_2")
-        self.formLayout_2.setLabelAlignment(Qt.AlignCenter)
-        self.formLayout_2.setFormAlignment(Qt.AlignHCenter|Qt.AlignTop)
         self.label_2 = QLabel(self.input_fileds_frame)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMinimumSize(QSize(100, 50))
@@ -454,7 +571,7 @@ class Ui_MainWindow(object):
         self.label_2.setStyleSheet(u"")
         self.label_2.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_2.setWidget(3, QFormLayout.LabelRole, self.label_2)
+        self.formLayout_2.setWidget(1, QFormLayout.LabelRole, self.label_2)
 
         self.username = QLineEdit(self.input_fileds_frame)
         self.username.setObjectName(u"username")
@@ -464,7 +581,7 @@ class Ui_MainWindow(object):
 "border-radius: 10px;")
         self.username.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_2.setWidget(3, QFormLayout.FieldRole, self.username)
+        self.formLayout_2.setWidget(1, QFormLayout.FieldRole, self.username)
 
         self.label_5 = QLabel(self.input_fileds_frame)
         self.label_5.setObjectName(u"label_5")
@@ -473,7 +590,7 @@ class Ui_MainWindow(object):
         self.label_5.setStyleSheet(u"")
         self.label_5.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_2.setWidget(4, QFormLayout.LabelRole, self.label_5)
+        self.formLayout_2.setWidget(2, QFormLayout.LabelRole, self.label_5)
 
         self.password = QLineEdit(self.input_fileds_frame)
         self.password.setObjectName(u"password")
@@ -484,19 +601,19 @@ class Ui_MainWindow(object):
         self.password.setEchoMode(QLineEdit.Password)
         self.password.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_2.setWidget(4, QFormLayout.FieldRole, self.password)
+        self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.password)
 
         self.checkBox = QCheckBox(self.input_fileds_frame)
         self.checkBox.setObjectName(u"checkBox")
 
-        self.formLayout_2.setWidget(5, QFormLayout.SpanningRole, self.checkBox)
+        self.formLayout_2.setWidget(3, QFormLayout.SpanningRole, self.checkBox)
 
         self.login_btn = QPushButton(self.input_fileds_frame)
         self.login_btn.setObjectName(u"login_btn")
         self.login_btn.setMinimumSize(QSize(0, 50))
         self.login_btn.setMaximumSize(QSize(200, 16777215))
 
-        self.formLayout_2.setWidget(6, QFormLayout.FieldRole, self.login_btn)
+        self.formLayout_2.setWidget(4, QFormLayout.FieldRole, self.login_btn)
 
         self.profile_icon_frame = QFrame(self.input_fileds_frame)
         self.profile_icon_frame.setObjectName(u"profile_icon_frame")
@@ -509,7 +626,7 @@ class Ui_MainWindow(object):
         self.profile_icon_frame.setFrameShape(QFrame.StyledPanel)
         self.profile_icon_frame.setFrameShadow(QFrame.Raised)
 
-        self.formLayout_2.setWidget(1, QFormLayout.FieldRole, self.profile_icon_frame)
+        self.formLayout_2.setWidget(0, QFormLayout.FieldRole, self.profile_icon_frame)
 
 
         self.verticalLayout_8.addWidget(self.input_fileds_frame, 0, Qt.AlignHCenter)
@@ -538,67 +655,78 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setSpacing(10)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(5, 5, 5, 5)
-        self.frame = QFrame(self.scroll_contents)
-        self.frame.setObjectName(u"frame")
-        self.frame.setMinimumSize(QSize(0, 0))
-        self.frame.setMaximumSize(QSize(16777215, 16777215))
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_13 = QVBoxLayout(self.frame)
+        self.recipe_description_frame = QFrame(self.scroll_contents)
+        self.recipe_description_frame.setObjectName(u"recipe_description_frame")
+        self.recipe_description_frame.setMinimumSize(QSize(0, 0))
+        self.recipe_description_frame.setMaximumSize(QSize(16777215, 16777215))
+        self.recipe_description_frame.setFrameShape(QFrame.StyledPanel)
+        self.recipe_description_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_13 = QVBoxLayout(self.recipe_description_frame)
         self.verticalLayout_13.setSpacing(10)
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
         self.verticalLayout_13.setContentsMargins(5, 5, 5, 5)
-        self.verticalLayout_12 = QVBoxLayout()
-        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.recipe_name = QLabel(self.frame)
+        self.vert_layout = QVBoxLayout()
+        self.vert_layout.setObjectName(u"vert_layout")
+        self.recipe_name = QLabel(self.recipe_description_frame)
         self.recipe_name.setObjectName(u"recipe_name")
         self.recipe_name.setEnabled(False)
         self.recipe_name.setMaximumSize(QSize(16777215, 100))
         font3 = QFont()
         font3.setPointSize(26)
         self.recipe_name.setFont(font3)
+        self.recipe_name.setStyleSheet(u"border:3px solid  rgb(43, 31, 91);\n"
+"border-color: rgb(62, 154, 62);\n"
+"border-radius: 10px;")
         self.recipe_name.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_12.addWidget(self.recipe_name)
+        self.vert_layout.addWidget(self.recipe_name)
 
-        self.horizontalLayout_6 = QHBoxLayout()
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.recipe_image = QLabel(self.frame)
+        self.hor_layout = QHBoxLayout()
+        self.hor_layout.setObjectName(u"hor_layout")
+        self.recipe_image = QLabel(self.recipe_description_frame)
         self.recipe_image.setObjectName(u"recipe_image")
         self.recipe_image.setEnabled(False)
         self.recipe_image.setMinimumSize(QSize(0, 300))
         self.recipe_image.setMaximumSize(QSize(16777215, 300))
         self.recipe_image.setFont(font3)
+        self.recipe_image.setStyleSheet(u"border:3px solid  rgb(43, 31, 91);\n"
+"border-color: rgb(100, 100, 255);\n"
+"border-radius: 10px;")
         self.recipe_image.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_6.addWidget(self.recipe_image)
+        self.hor_layout.addWidget(self.recipe_image)
 
-        self.recipe_ingridients = QLabel(self.frame)
+        self.recipe_ingridients = QLabel(self.recipe_description_frame)
         self.recipe_ingridients.setObjectName(u"recipe_ingridients")
         self.recipe_ingridients.setEnabled(False)
         self.recipe_ingridients.setMinimumSize(QSize(0, 300))
         self.recipe_ingridients.setMaximumSize(QSize(16777215, 300))
         self.recipe_ingridients.setFont(font3)
+        self.recipe_ingridients.setStyleSheet(u"border:3px solid  rgb(43, 31, 91);\n"
+"border-color: rgb(197, 106, 32);\n"
+"border-radius: 10px\n"
+"\n"
+"")
         self.recipe_ingridients.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_6.addWidget(self.recipe_ingridients)
+        self.hor_layout.addWidget(self.recipe_ingridients)
 
 
-        self.verticalLayout_12.addLayout(self.horizontalLayout_6)
+        self.vert_layout.addLayout(self.hor_layout)
 
-        self.recipe_description = QLabel(self.frame)
+        self.recipe_description = QLabel(self.recipe_description_frame)
         self.recipe_description.setObjectName(u"recipe_description")
         self.recipe_description.setEnabled(False)
         self.recipe_description.setFont(font3)
         self.recipe_description.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_12.addWidget(self.recipe_description)
+        self.vert_layout.addWidget(self.recipe_description)
 
 
-        self.verticalLayout_13.addLayout(self.verticalLayout_12)
+        self.verticalLayout_13.addLayout(self.vert_layout)
 
 
-        self.gridLayout_2.addWidget(self.frame, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.recipe_description_frame, 0, 0, 1, 1)
 
         self.scroll_area.setWidget(self.scroll_contents)
 
@@ -659,7 +787,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
+        self.search_response_btn.setDefault(False)
         self.login_res_ok_btn.setDefault(False)
 
 
@@ -676,12 +805,12 @@ class Ui_MainWindow(object):
         self.accounts_button.setText(QCoreApplication.translate("MainWindow", u"ACCOUNT", None))
         self.home_button.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
         self.settings_button.setText(QCoreApplication.translate("MainWindow", u"SETTINGS", None))
-        self.first_recipe_but.setText(QCoreApplication.translate("MainWindow", u"pasta", None))
-        self.second_recipe_but.setText(QCoreApplication.translate("MainWindow", u"poridge", None))
-        self.fourth_recipe_but.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.third_recipe_but.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.ok_but.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.error_label.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.second_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"poridge", None))
+        self.third_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.fourth_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.first_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"pasta", None))
+        self.search_response_msg.setText(QCoreApplication.translate("MainWindow", u"Login response message", None))
+        self.search_response_btn.setText(QCoreApplication.translate("MainWindow", u"OK", None))
         self.login_response_msg.setText(QCoreApplication.translate("MainWindow", u"Login response message", None))
         self.login_res_ok_btn.setText(QCoreApplication.translate("MainWindow", u"OK", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Username", None))
