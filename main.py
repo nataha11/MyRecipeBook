@@ -16,12 +16,108 @@ from ui_cookada_main_window import *
 # Global value for the windows status for understanding min/max 
 WINDOW_SIZE = 0;
 
+# Функции поиска:
+def search_branch(root, word, search_mistake, word_copy, dishes):
+    iteration_number = 0
+
+    if len(word) == 0:
+        DFS(root, word_copy, root, dishes)
+    else:
+        for child in root.children:
+            iteration_number += 1
+            if child.letter == word[0]:
+                search_branch(child, word[1:], search_mistake, word_copy, dishes)
+                break
+
+        # Если не нашли подходящего префикса
+        if iteration_number == len(root.children) and len(word) != 0:
+            search_mistake = 1
+
+    return dishes
+
+
+def DFS(current_root, word, root, dishes):
+    # Добавляем в конец текущего слова новую полученную букву
+    if current_root != root:
+        word = word + current_root.letter
+
+    # Проверка на то, подходит ли нам данное слово
+    if current_root.accepting_state == 1:
+        dishes.append(word)
+
+    # Продолжение поиска
+    for elem in current_root.children:
+        DFS(elem, word, root, dishes)
+
+    # Удаляем полученную на данном шаге букву
+    word = word[:-1]
+
+    return 0
+
+class Node:
+    def __init__(self, value):
+        self.children = []
+        self.letter = value
+        self.accepting_state = 0
+
+# Основная функция поиска, которая выдаёт список блюд по префиксу
+def search(root, word):
+    search_mistake = 0
+    # Это массив блюд, которые удовлетворяют данному префиксу
+    dishes = []
+    word_copy = word
+    dishes = search_branch(root, word, search_mistake, word_copy, dishes)
+
+    return dishes
+
+def CreateTree():
+    path = "recipebook/db/recipebook.db"
+    names = get_recipe_name(path)
+
+    root = Node("")
+    for name in names:
+        print(name)
+        insert(root, name)
+
+    return root
+
+def insert(root, word):
+    if (len(word) == 0):
+        root.accepting_state = 1
+    else:
+        for child in root.children:
+            if word[0] == child.letter:
+                insert(child, word[1:])
+                return 0
+        else:
+            root.children.append(Node(word[0]))
+            insert(root.children[-1], word[1:])
+            return 0
+    return 0
+
+def get_recipe_name(db_path):
+    conn = conn = sqlite3.connect('recipebook/db/recipebook.db')
+    cur = conn.cursor()
+    cur.execute('''
+     SELECT DISTINCT name
+     FROM recipes
+     ''')
+    rows = cur.fetchall()
+    conn.close()
+    names = []
+    for elem in rows:
+        names.append(elem[0].lower())
+
+    return names
+
 # The only class - MainClass
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        self.root = CreateTree()
 
         # Remove window tlttle bar
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint) 
@@ -117,8 +213,10 @@ class MainWindow(QMainWindow):
         for w in self.ui.left_side_menu.findChildren(QPushButton):
             w.clicked.connect(self.applyButtonStyle)
 
-
-
+        ###################################################
+        # Здесь будет реализована реакция на изменение текста в поисковике
+        ###################################################
+        self.ui.search_line.textChanged.connect(self.changeText)
 
         # ###############################################
         # SHOW THE WINDOW
@@ -128,6 +226,11 @@ class MainWindow(QMainWindow):
 ################################################################################################
 ##############################------CLASS METHODS-------########################################
 ################################################################################################
+    ###################################################
+    # Здесь будет реализована реакция на изменение текста в поисковике
+    ###################################################
+    def changeText(self):
+        print(search(self.root, self.ui.search_line.text()))
 
     #################################################
     # NICE THING. HIGHLIGHTS BTN if PRESSED
@@ -179,12 +282,11 @@ class MainWindow(QMainWindow):
     ################################################
 
     def createRecipePage(self, recipeName):
-        print("HUY")
         db_catalog = "recipebook/db"
         conn = sqlite3.connect(db_catalog + "/recipebook.db", timeout=10)
         cur = conn.cursor()
         cur.execute('''
-    			SELECT recipes.id, description, instruction, ingredeints, images.id
+    			SELECT recipes.id, description, instruction, ingredients, images.id
     			FROM recipes 
     			JOIN images_in_recipes ON recipes.id = images_in_recipes.recipe_id
     			JOIN images ON images_in_recipes.image_id = images.id
@@ -209,7 +311,7 @@ class MainWindow(QMainWindow):
 
         description = get_info(db_catalog + "/" + data[0][1])
         instruction = get_info(db_catalog + "/" + data[0][2])
-        ingridients = get_info(db_catalog + "/" + data[0][3])
+        ingredients = get_info(db_catalog + "/" + data[0][3])
 
         # дальше нужно высрать текст на label и картинки(до них хранятся пути)
         self.ui.stackedWidget.setCurrentWidget(self.ui.recipe_page)
@@ -231,13 +333,13 @@ class MainWindow(QMainWindow):
         self.ui.recipe_description.setText("Инструкция по приготовлению")
         self.ui.recipe_description.setText(QCoreApplication.translate("MainWindow", instruction, None))
 
-        self.ui.recipe_ingridients.setReadOnly(True)
-        self.ui.recipe_ingridients.setTextColor(QColor(62, 154, 62))
-        self.ui.recipe_ingridients.setWordWrapMode(QTextOption.WordWrap)
-        self.ui.recipe_ingridients.setFont(QFont("Times", 20))
-        self.ui.recipe_ingridients.setFontItalic(20)
-        self.ui.recipe_ingridients.setText("Необходимые ингридиенты")
-        self.ui.recipe_ingridients.setPlainText(QCoreApplication.translate("MainWindow", ingridients, None))
+        self.ui.recipe_ingredients.setReadOnly(True)
+        self.ui.recipe_ingredients.setTextColor(QColor(62, 154, 62))
+        self.ui.recipe_ingredients.setWordWrapMode(QTextOption.WordWrap)
+        self.ui.recipe_ingredients.setFont(QFont("Times", 20))
+        self.ui.recipe_ingredients.setFontItalic(20)
+        self.ui.recipe_ingredients.setText("Необходимые ингридиенты")
+        self.ui.recipe_ingredients.setPlainText(QCoreApplication.translate("MainWindow", ingredients, None))
         
         self.ui.recipe_name.setFont(QFont("Times", 25))
         self.ui.recipe_name.setStyleSheet('color:white')
