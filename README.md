@@ -16,6 +16,7 @@ pip install PySide2
 3. Download the project:<br/>
 ```
 git clone https://github.com/nataha11/MyRecipeBook.git
+cd MyRecipeBook
 chmod +x main.py
 ```
 4. Execute:<br/>
