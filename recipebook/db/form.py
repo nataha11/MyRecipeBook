@@ -128,7 +128,7 @@ class Window(QDialog):
 
 #Здесь происходит жеская вставка в бд, не стоит это читать, оно работает, но на костылях
 def insert_recipe(kostil):
-	conn = sqlite3.connect('recipebook.db', timeout = 10)#не ебу зачем он нужен timeout без него не работает
+	conn = sqlite3.connect('recipebook.db', timeout = 10) # doesn't work without timeout
 	cur = conn.cursor()
 	try:
 		cur.execute('''
