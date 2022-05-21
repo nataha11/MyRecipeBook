@@ -76,7 +76,6 @@ def CreateTree():
 
     root = Node("")
     for name in names:
-        print(name)
         insert(root, name)
 
     return root, names

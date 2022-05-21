@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'cookada_main_windowEoXxmR.ui'
+## Form generated from reading UI file 'cookada_main_windowXDXVAi.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -267,31 +267,6 @@ class Ui_MainWindow(object):
 
         self.recipes_grid = QGridLayout()
         self.recipes_grid.setObjectName(u"recipes_grid")
-        self.second_recipe_btn = QPushButton(self.home_page)
-        self.second_recipe_btn.setObjectName(u"second_recipe_btn")
-        self.second_recipe_btn.setMinimumSize(QSize(0, 200))
-        self.second_recipe_btn.setStyleSheet(u"QPushButton{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(0, 0, 0);\n"
-"	border: 2px solid rgb(0, 69, 116);\n"
-"	border-radius: 22px;\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"	background-color: rgb(0, 69, 116);\n"
-"	border: 2px solid rgb(0, 69, 116);\n"
-"	border-radius: 22px;\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"	background-color: rgb(0, 136, 255);\n"
-"	border: 2px solid rgb(0, 69, 116);\n"
-"	border-radius: 22px;\n"
-"}\n"
-"")
-
-        self.recipes_grid.addWidget(self.second_recipe_btn, 0, 2, 1, 1)
-
         self.third_recipe_btn = QPushButton(self.home_page)
         self.third_recipe_btn.setObjectName(u"third_recipe_btn")
         self.third_recipe_btn.setMinimumSize(QSize(0, 200))
@@ -317,31 +292,6 @@ class Ui_MainWindow(object):
 
         self.recipes_grid.addWidget(self.third_recipe_btn, 2, 0, 1, 1)
 
-        self.fourth_recipe_btn = QPushButton(self.home_page)
-        self.fourth_recipe_btn.setObjectName(u"fourth_recipe_btn")
-        self.fourth_recipe_btn.setMinimumSize(QSize(300, 200))
-        self.fourth_recipe_btn.setStyleSheet(u"QPushButton{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(0, 0, 0);\n"
-"	border: 2px solid rgb(0, 69, 116);\n"
-"	border-radius: 22px;\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"	background-color: rgb(0, 69, 116);\n"
-"	border: 2px solid rgb(0, 69, 116);\n"
-"	border-radius: 22px;\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"	background-color: rgb(0, 136, 255);\n"
-"	border: 2px solid rgb(0, 69, 116);\n"
-"	border-radius: 22px;\n"
-"}\n"
-"")
-
-        self.recipes_grid.addWidget(self.fourth_recipe_btn, 2, 2, 1, 1)
-
         self.first_recipe_btn = QPushButton(self.home_page)
         self.first_recipe_btn.setObjectName(u"first_recipe_btn")
         self.first_recipe_btn.setMinimumSize(QSize(0, 200))
@@ -366,6 +316,56 @@ class Ui_MainWindow(object):
 "")
 
         self.recipes_grid.addWidget(self.first_recipe_btn, 0, 0, 1, 1)
+
+        self.second_recipe_btn = QPushButton(self.home_page)
+        self.second_recipe_btn.setObjectName(u"second_recipe_btn")
+        self.second_recipe_btn.setMinimumSize(QSize(0, 200))
+        self.second_recipe_btn.setStyleSheet(u"QPushButton{\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(0, 0, 0);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(0, 69, 116);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"	background-color: rgb(0, 136, 255);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"")
+
+        self.recipes_grid.addWidget(self.second_recipe_btn, 0, 2, 1, 1)
+
+        self.fourth_recipe_btn = QPushButton(self.home_page)
+        self.fourth_recipe_btn.setObjectName(u"fourth_recipe_btn")
+        self.fourth_recipe_btn.setMinimumSize(QSize(300, 200))
+        self.fourth_recipe_btn.setStyleSheet(u"QPushButton{\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(0, 0, 0);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(0, 69, 116);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"	background-color: rgb(0, 136, 255);\n"
+"	border: 2px solid rgb(0, 69, 116);\n"
+"	border-radius: 22px;\n"
+"}\n"
+"")
+
+        self.recipes_grid.addWidget(self.fourth_recipe_btn, 2, 2, 1, 1)
 
 
         self.verticalLayout_7.addLayout(self.recipes_grid)
@@ -789,7 +789,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
         self.search_response_btn.setDefault(False)
         self.login_res_ok_btn.setDefault(False)
 
@@ -807,10 +807,10 @@ class Ui_MainWindow(object):
         self.accounts_button.setText(QCoreApplication.translate("MainWindow", u"ACCOUNT", None))
         self.home_button.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
         self.settings_button.setText(QCoreApplication.translate("MainWindow", u"SETTINGS", None))
-        self.second_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"\u043f\u043b\u043e\u0432", None))
-        self.third_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"\u041e\u043c\u043b\u0435\u0442", None))
-        self.fourth_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"\u0411\u043b\u0438\u043d\u044b", None))
+        self.third_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"\u043e\u043c\u043b\u0435\u0442", None))
         self.first_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"\u043f\u0430\u0441\u0442\u0430", None))
+        self.second_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"\u043f\u043b\u043e\u0432", None))
+        self.fourth_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"\u0431\u043b\u0438\u043d\u044b", None))
         self.search_response_msg.setText(QCoreApplication.translate("MainWindow", u"Login response message", None))
         self.search_response_btn.setText(QCoreApplication.translate("MainWindow", u"OK", None))
         self.login_response_msg.setText(QCoreApplication.translate("MainWindow", u"Login response message", None))

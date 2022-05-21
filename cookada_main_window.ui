@@ -568,7 +568,7 @@ QPushButton:pressed{
 </string>
                   </property>
                   <property name="text">
-                   <string>Омлет</string>
+                   <string>омлет</string>
                   </property>
                  </widget>
                 </item>
@@ -670,7 +670,7 @@ QPushButton:pressed{
 </string>
                   </property>
                   <property name="text">
-                   <string>Блины</string>
+                   <string>блины</string>
                   </property>
                  </widget>
                 </item>
