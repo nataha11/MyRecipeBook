@@ -519,7 +519,7 @@ background-position: center left;</string>
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>0</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="home_page">
              <property name="styleSheet">
@@ -545,6 +545,11 @@ background-position: center left;</string>
                     <width>0</width>
                     <height>200</height>
                    </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>25</pointsize>
+                   </font>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton{
@@ -580,6 +585,11 @@ QPushButton:pressed{
                     <height>200</height>
                    </size>
                   </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>25</pointsize>
+                   </font>
+                  </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton{
 	color: rgb(255, 255, 255);
@@ -614,6 +624,11 @@ QPushButton:pressed{
                     <height>200</height>
                    </size>
                   </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>25</pointsize>
+                   </font>
+                  </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton{
 	color: rgb(255, 255, 255);
@@ -647,6 +662,11 @@ QPushButton:pressed{
                     <width>300</width>
                     <height>200</height>
                    </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>25</pointsize>
+                   </font>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton{
@@ -753,7 +773,7 @@ QLabel{
                          <enum>Qt::LeftToRight</enum>
                         </property>
                         <property name="text">
-                         <string>Login response message</string>
+                         <string>Error message</string>
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignCenter</set>
@@ -1301,7 +1321,7 @@ border-radius: 10px;
 background-color: rgb(0,0,0)</string>
                          </property>
                          <property name="text">
-                          <string>Recipe name</string>
+                          <string/>
                          </property>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
@@ -1340,7 +1360,7 @@ background-color: rgb(0,0,0)
 </string>
                            </property>
                            <property name="text">
-                            <string>Recipe image</string>
+                            <string/>
                            </property>
                            <property name="alignment">
                             <set>Qt::AlignCenter</set>
