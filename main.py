@@ -6,12 +6,14 @@ import sys
 import os
 import platform
 import sqlite3
+import scipy
 from functools import partial
 from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PySide2.QtWidgets import *
 from ui_cookada_main_window import *
+
 
 # Global value for the windows status for understanding min/max 
 WINDOW_SIZE = 0;
@@ -67,7 +69,9 @@ def search(root, word):
     dishes = []
     word_copy = word
     dishes = search_branch(root, word, search_mistake, word_copy, dishes)
-
+    self.completer = QCompleter(widget_names)
+    self.completer.setCaseSensitivity(Qt.CaseInsensitive)
+    self.searchbar.setCompleter(self.completer)
     return dishes
 
 def CreateTree():
@@ -194,7 +198,6 @@ class MainWindow(QMainWindow):
         self.ui.third_recipe_btn.clicked.connect(partial(self.createRecipePage, self.ui.third_recipe_btn.text()))
         self.ui.fourth_recipe_btn.clicked.connect(partial(self.createRecipePage, self.ui.fourth_recipe_btn.text()))
 
-
         # ###############################################
         # LOGIN PAGE
         # ###############################################
@@ -202,6 +205,7 @@ class MainWindow(QMainWindow):
         self.ui.login_btn.clicked.connect(self.validateLoginFields)
         #Hiding login response container:
         self.ui.login_response_frame.hide()
+        self.ui.search_response_frame.hide()
         #Hiding login response container after OK button is pressed:
         self.ui.login_res_ok_btn.clicked.connect(lambda:self.ui.login_response_frame.hide())
         #
@@ -226,8 +230,9 @@ class MainWindow(QMainWindow):
 ################################################################################################
 ##############################------CLASS METHODS-------########################################
 ################################################################################################
+
     ###################################################
-    # Здесь будет реализована реакция на изменение текста в поисковике
+    # On keyboard event for searching
     ###################################################
     def changeText(self):
         print(search(self.root, self.ui.search_line.text()))
@@ -278,7 +283,7 @@ class MainWindow(QMainWindow):
             self.ui.restoreButton.setIcon(QtGui.QIcon(u":/icons/icons/cil-window-maximize.png"))#Show maximize icon
 
     ################################################
-    # Обработка поискового запроса. Сначала попытемся сделать простейший поиск по названию блюда
+    # Select from databse to fill recipe page template
     ################################################
 
     def createRecipePage(self, recipeName):
@@ -286,22 +291,16 @@ class MainWindow(QMainWindow):
         conn = sqlite3.connect(db_catalog + "/recipebook.db", timeout=10)
         cur = conn.cursor()
         cur.execute('''
-    			SELECT recipes.id, description, instruction, ingredients, images.id
+    			SELECT recipes.id, description, instruction, ingredients, images.image
     			FROM recipes 
     			JOIN images_in_recipes ON recipes.id = images_in_recipes.recipe_id
     			JOIN images ON images_in_recipes.image_id = images.id
     			WHERE recipes.name = (?) ''', (recipeName,))
         data = cur.fetchall()
         conn.close()
-        print(data)
-
-
-        # decriptionPath = db_catalog + "/" + data[0][1]
-        # instructionPath = db_catalog + "/" + data[0][2]
-        # ingredientsPath = db_catalog + "/" + data[0][3]
 
         images_path = []
-        for elem in data: images_path.append(elem[-1])
+        for elem in data: images_path.append(db_catalog + "/" + elem[-1])
 
         def get_info(path) -> str:
             f = open(path, "r")
@@ -313,38 +312,33 @@ class MainWindow(QMainWindow):
         instruction = get_info(db_catalog + "/" + data[0][2])
         ingredients = get_info(db_catalog + "/" + data[0][3])
 
-        # дальше нужно высрать текст на label и картинки(до них хранятся пути)
+
+        if(len(images_path) != 0):
+            self.ui.recipe_image.setScaledContents(True)
+            img = QPixmap(images_path[0])
+            self.ui.recipe_image.setPixmap(img)
+            self.ui.recipe_image.repaint()
+            QApplication.processEvents()
+
+
         self.ui.stackedWidget.setCurrentWidget(self.ui.recipe_page)
-        #self.ui.recipe_description.setText(QCoreApplication.translate("MainWindow", description, None))
-        
-        # self.ui.recipe_description.setText("Способ приготовления блюда: \n" + QCoreApplication.translate("MainWindow", instruction, None))
-        
-        # for i in range(20, 10, -1):
-        #     if not self.ui.recipe_description.hasScaledContents():
-        #         self.ui.recipe_description.setFont(QFont("Times", i))
-        #         self.ui.recipe_description.setText("Способ приготовления блюда: \n" + QCoreApplication.translate("MainWindow", instruction, None))
-        #         break
 
         self.ui.recipe_description.setReadOnly(True)
-        self.ui.recipe_description.setTextColor(QColor(62, 154, 62))
+        self.ui.recipe_description.setTextColor(QColor(255, 255, 255))
         self.ui.recipe_description.setWordWrapMode(QTextOption.WordWrap)
         self.ui.recipe_description.setFont(QFont("Times", 20))
         self.ui.recipe_description.setFontUnderline(20)
-        self.ui.recipe_description.setText("Инструкция по приготовлению")
-        self.ui.recipe_description.setText(QCoreApplication.translate("MainWindow", instruction, None))
+        self.ui.recipe_description.setText("Инструкция по приготовлению: \n" + QCoreApplication.translate("MainWindow", instruction, None))
 
         self.ui.recipe_ingredients.setReadOnly(True)
-        self.ui.recipe_ingredients.setTextColor(QColor(62, 154, 62))
+        self.ui.recipe_ingredients.setTextColor(QColor(255, 255, 255))
         self.ui.recipe_ingredients.setWordWrapMode(QTextOption.WordWrap)
         self.ui.recipe_ingredients.setFont(QFont("Times", 20))
-        self.ui.recipe_ingredients.setFontItalic(20)
-        self.ui.recipe_ingredients.setText("Необходимые ингридиенты")
-        self.ui.recipe_ingredients.setPlainText(QCoreApplication.translate("MainWindow", ingredients, None))
+        self.ui.recipe_ingredients.setPlainText("Необходимые ингридиенты: \n" + QCoreApplication.translate("MainWindow", ingredients, None))
         
         self.ui.recipe_name.setFont(QFont("Times", 25))
         self.ui.recipe_name.setStyleSheet('color:white')
         self.ui.recipe_name.setText(QCoreApplication.translate("MainWindow", recipeName, None).upper())
-
 
     #################################################
     # LOGIN VALIDATION SECTION
