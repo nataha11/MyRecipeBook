@@ -132,7 +132,7 @@ def insert_recipe(kostil):
 	cur = conn.cursor()
 	try:
 		cur.execute('''
-			INSERT INTO recipes (name, description, ingredeints, instruction) 
+			INSERT INTO recipes (name	, description, ingredients, instruction) 
 			VALUES (?, ?, ?, ?)
 		''', (kostil['name'], kostil['description'], kostil['ingredients'], kostil['instruction']))
 		

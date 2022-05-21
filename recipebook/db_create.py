@@ -21,7 +21,7 @@ cur.executescript('''
 		name text,
 		description text,
 		instruction text,
-		ingredeints text
+		ingredients text
 	);
 
 
