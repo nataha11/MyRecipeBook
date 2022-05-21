@@ -697,16 +697,16 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_6.addWidget(self.recipe_image)
 
-        self.recipe_ingridients = QTextEdit(self.recipe_description_frame)
-        self.recipe_ingridients.setObjectName(u"recipe_ingridients")
-        self.recipe_ingridients.setMinimumSize(QSize(400, 300))
-        self.recipe_ingridients.setStyleSheet(u"background-color:rgb(25, 25, 25);\n"
+        self.recipe_ingredients = QTextEdit(self.recipe_description_frame)
+        self.recipe_ingredients.setObjectName(u"recipe_ingredients")
+        self.recipe_ingredients.setMinimumSize(QSize(400, 300))
+        self.recipe_ingredients.setStyleSheet(u"background-color:rgb(25, 25, 25);\n"
 "border:3px solid;\n"
 "border-color: rgb(197, 106, 32);\n"
 "border-radius: 10px;")
-        self.recipe_ingridients.setLineWidth(5)
+        self.recipe_ingredients.setLineWidth(5)
 
-        self.horizontalLayout_6.addWidget(self.recipe_ingridients)
+        self.horizontalLayout_6.addWidget(self.recipe_ingredients)
 
 
         self.vert_layout.addLayout(self.horizontalLayout_6)
@@ -803,10 +803,10 @@ class Ui_MainWindow(object):
         self.accounts_button.setText(QCoreApplication.translate("MainWindow", u"ACCOUNT", None))
         self.home_button.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
         self.settings_button.setText(QCoreApplication.translate("MainWindow", u"SETTINGS", None))
-        self.second_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"poridge", None))
-        self.third_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.fourth_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.first_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"pasta", None))
+        self.second_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"плов", None))
+        self.third_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"Омлет", None))
+        self.fourth_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"Блины", None))
+        self.first_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"паста", None))
         self.search_response_msg.setText(QCoreApplication.translate("MainWindow", u"Login response message", None))
         self.search_response_btn.setText(QCoreApplication.translate("MainWindow", u"OK", None))
         self.login_response_msg.setText(QCoreApplication.translate("MainWindow", u"Login response message", None))

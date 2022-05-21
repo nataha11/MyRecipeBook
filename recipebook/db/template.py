@@ -1,31 +1,23 @@
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
 import sys
 import os
-import sqlite3
+import platform
+from PySide2 import QtCore, QtGui, QtWidgets
+from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
+from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
+from PySide2.QtWidgets import *
 
-
-class recipeTemplate(QWidget):
+class recipeTemplate(QMainWindow):
 	def __init__(self, recipeName):
 		super(recipeTemplate, self).__init__()
-		self.setWindowTitle("Add recipe")
-		#self.setWindowFlag(QtCore.sheet)
-		self.createForm()
-
+		self.edit = QLineEdit(self)
+		self.edit.textChanged.connect(self.func)
+		self.show()
+	def func(self):
+		print("based")
 
 		
 
-	def createForm(self):
-		pass
-		# creating a form layout
-		#layout = QFormLayout()
-
-		# adding rows
-		# for name and adding input text
 		
-		# setting layout
-		
-
 if __name__ == '__main__':
 
 	# create pyqt5 app
@@ -38,4 +30,4 @@ if __name__ == '__main__':
 	window.show()
 
 	# start the app
-	sys.exit(app.exec())
+	sys.exit(app.exec_())
