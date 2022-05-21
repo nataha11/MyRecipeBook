@@ -6,14 +6,12 @@ import sys
 import os
 import platform
 import sqlite3
-import scipy
 from functools import partial
 from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PySide2.QtWidgets import *
 from ui_cookada_main_window import *
-
 
 # Global value for the windows status for understanding min/max 
 WINDOW_SIZE = 0;
@@ -69,9 +67,7 @@ def search(root, word):
     dishes = []
     word_copy = word
     dishes = search_branch(root, word, search_mistake, word_copy, dishes)
-    self.completer = QCompleter(widget_names)
-    self.completer.setCaseSensitivity(Qt.CaseInsensitive)
-    self.searchbar.setCompleter(self.completer)
+
     return dishes
 
 def CreateTree():
@@ -83,7 +79,7 @@ def CreateTree():
         print(name)
         insert(root, name)
 
-    return root
+    return root, names
 
 def insert(root, word):
     if (len(word) == 0):
@@ -121,7 +117,7 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.root = CreateTree()
+        self.root, self.dishes = CreateTree()
 
         # Remove window tlttle bar
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint) 
@@ -198,6 +194,7 @@ class MainWindow(QMainWindow):
         self.ui.third_recipe_btn.clicked.connect(partial(self.createRecipePage, self.ui.third_recipe_btn.text()))
         self.ui.fourth_recipe_btn.clicked.connect(partial(self.createRecipePage, self.ui.fourth_recipe_btn.text()))
 
+
         # ###############################################
         # LOGIN PAGE
         # ###############################################
@@ -208,7 +205,9 @@ class MainWindow(QMainWindow):
         self.ui.search_response_frame.hide()
         #Hiding login response container after OK button is pressed:
         self.ui.login_res_ok_btn.clicked.connect(lambda:self.ui.login_response_frame.hide())
-        #
+        
+
+
 
 
         # ###############################################
@@ -221,6 +220,9 @@ class MainWindow(QMainWindow):
         # Здесь будет реализована реакция на изменение текста в поисковике
         ###################################################
         self.ui.search_line.textChanged.connect(self.changeText)
+        self.ui.search_line.returnPressed.connect(self.turnToPage)
+        #подсказки в поиске
+        
 
         # ###############################################
         # SHOW THE WINDOW
@@ -230,12 +232,23 @@ class MainWindow(QMainWindow):
 ################################################################################################
 ##############################------CLASS METHODS-------########################################
 ################################################################################################
+    ###################################################
+    # Здесь будет реализована реакция на изменение текста в поисковике
+    ###################################################
 
-    ###################################################
-    # On keyboard event for searching
-    ###################################################
+    def turnToPage(self):
+        query = self.ui.search_line.text().lower()
+        if(query in self.dishes): self.createRecipePage(query)
+        else: print("wrong query")
+        
     def changeText(self):
-        print(search(self.root, self.ui.search_line.text()))
+        widget_names = search(self.root, self.ui.search_line.text().lower())
+        self.completer = QCompleter(widget_names)
+        self.completer.setCaseSensitivity(Qt.CaseInsensitive)
+        self.ui.search_line.setCompleter(self.completer)
+        
+        
+
 
     #################################################
     # NICE THING. HIGHLIGHTS BTN if PRESSED
@@ -283,7 +296,7 @@ class MainWindow(QMainWindow):
             self.ui.restoreButton.setIcon(QtGui.QIcon(u":/icons/icons/cil-window-maximize.png"))#Show maximize icon
 
     ################################################
-    # Select from databse to fill recipe page template
+    # Обработка поискового запроса. Сначала попытемся сделать простейший поиск по названию блюда
     ################################################
 
     def createRecipePage(self, recipeName):
@@ -339,6 +352,8 @@ class MainWindow(QMainWindow):
         self.ui.recipe_name.setFont(QFont("Times", 25))
         self.ui.recipe_name.setStyleSheet('color:white')
         self.ui.recipe_name.setText(QCoreApplication.translate("MainWindow", recipeName, None).upper())
+        self.ui.recipe_description.setReadOnly(True)
+
 
     #################################################
     # LOGIN VALIDATION SECTION
