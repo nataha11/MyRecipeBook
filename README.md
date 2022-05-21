@@ -1,7 +1,7 @@
 # MyRecipeBook
 
-Desktop app: a recipe book that can search through recipes including chosen (without quantity) ingridients.
-Individual notes under every recipe are implemented.
-Using: PyQt5 + SQLite3
+A recipe book desktop app. Supports searching through recipes by their names. Displays image, ingredients and instruction of the recipe.</br>
+User login implemented.</br>
+Used: PySide2 + SQLite3
 
 
