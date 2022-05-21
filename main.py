@@ -315,7 +315,7 @@ class MainWindow(QMainWindow):
         for elem in data: images_path.append(db_catalog + "/" + elem[-1])
 
         def get_info(path) -> str:
-            f = open(path, "r")
+            f = open(path, "r", encoding='cp1251')
             info = f.read()
             f.close()
             return info
