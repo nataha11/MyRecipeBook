@@ -1333,7 +1333,7 @@ border-radius: 10px;</string>
                            </property>
                            <property name="styleSheet">
                             <string notr="true">border:3px solid  rgb(43, 31, 91);
-border-color: rgb(197, 106, 32);
+border-color: rgb(1, 90, 153);
 border-radius: 10px
 </string>
                            </property>
@@ -1356,7 +1356,7 @@ border-radius: 10px
                            <property name="styleSheet">
                             <string notr="true">background-color:rgb(25, 25, 25);
 border:3px solid;
-border-color: rgb(197, 106, 32);
+border-color: rgb(1, 90, 153);
 border-radius: 10px;</string>
                            </property>
                            <property name="lineWidth">
@@ -1371,7 +1371,7 @@ border-radius: 10px;</string>
                          <property name="styleSheet">
                           <string notr="true">background-color:rgb(25, 25, 25);
 border:3px solid;
-border-color: rgb(197, 106, 32);
+border-color: rgb(1, 90, 153);
 border-radius: 10px;</string>
                          </property>
                         </widget>
