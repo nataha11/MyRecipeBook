@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'cookada_main_windowNOBlEv.ui'
+## Form generated from reading UI file 'cookada_main_windowEoXxmR.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -676,7 +676,8 @@ class Ui_MainWindow(object):
         self.recipe_name.setFont(font3)
         self.recipe_name.setStyleSheet(u"border:3px solid  rgb(43, 31, 91);\n"
 "border-color: rgb(62, 154, 62);\n"
-"border-radius: 10px;")
+"border-radius: 10px;\n"
+"background-color: rgb(0,0,0)")
         self.recipe_name.setAlignment(Qt.AlignCenter)
 
         self.vert_layout.addWidget(self.recipe_name)
@@ -690,8 +691,9 @@ class Ui_MainWindow(object):
         self.recipe_image.setMaximumSize(QSize(16777215, 16777215))
         self.recipe_image.setFont(font3)
         self.recipe_image.setStyleSheet(u"border:3px solid  rgb(43, 31, 91);\n"
-"border-color: rgb(197, 106, 32);\n"
-"border-radius: 10px\n"
+"border-color: rgb(1, 90, 153);\n"
+"border-radius: 10px;\n"
+"background-color: rgb(0,0,0)\n"
 "")
         self.recipe_image.setAlignment(Qt.AlignCenter)
 
@@ -702,8 +704,9 @@ class Ui_MainWindow(object):
         self.recipe_ingredients.setMinimumSize(QSize(400, 300))
         self.recipe_ingredients.setStyleSheet(u"background-color:rgb(25, 25, 25);\n"
 "border:3px solid;\n"
-"border-color: rgb(197, 106, 32);\n"
-"border-radius: 10px;")
+"border-color: rgb(1, 90, 153);\n"
+"border-radius: 10px;\n"
+"background-color: rgb(0,0,0)")
         self.recipe_ingredients.setLineWidth(5)
 
         self.horizontalLayout_6.addWidget(self.recipe_ingredients)
@@ -715,8 +718,9 @@ class Ui_MainWindow(object):
         self.recipe_description.setObjectName(u"recipe_description")
         self.recipe_description.setStyleSheet(u"background-color:rgb(25, 25, 25);\n"
 "border:3px solid;\n"
-"border-color: rgb(197, 106, 32);\n"
-"border-radius: 10px;")
+"border-color: rgb(1, 90, 153);\n"
+"border-radius: 10px;\n"
+"background-color: rgb(0,0,0)")
 
         self.vert_layout.addWidget(self.recipe_description)
 
@@ -803,10 +807,10 @@ class Ui_MainWindow(object):
         self.accounts_button.setText(QCoreApplication.translate("MainWindow", u"ACCOUNT", None))
         self.home_button.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
         self.settings_button.setText(QCoreApplication.translate("MainWindow", u"SETTINGS", None))
-        self.second_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"плов", None))
-        self.third_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"Омлет", None))
-        self.fourth_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"Блины", None))
-        self.first_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"паста", None))
+        self.second_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"\u043f\u043b\u043e\u0432", None))
+        self.third_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"\u041e\u043c\u043b\u0435\u0442", None))
+        self.fourth_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"\u0411\u043b\u0438\u043d\u044b", None))
+        self.first_recipe_btn.setText(QCoreApplication.translate("MainWindow", u"\u043f\u0430\u0441\u0442\u0430", None))
         self.search_response_msg.setText(QCoreApplication.translate("MainWindow", u"Login response message", None))
         self.search_response_btn.setText(QCoreApplication.translate("MainWindow", u"OK", None))
         self.login_response_msg.setText(QCoreApplication.translate("MainWindow", u"Login response message", None))
