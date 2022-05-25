@@ -829,7 +829,7 @@ class Ui_MainWindow(object):
         self.login_btn.setText(QCoreApplication.translate("MainWindow", u"Login", None))
         self.recipe_name.setText("")
         self.recipe_image.setText("")
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Setttings Page", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Settings Page", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"v 1.0", None))
     # retranslateUi
 

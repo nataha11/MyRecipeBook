@@ -1429,7 +1429,7 @@ background-color: rgb(0,0,0)</string>
                  <string notr="true">background-color: rgb(84, 84, 84);</string>
                 </property>
                 <property name="text">
-                 <string>Setttings Page</string>
+                 <string>Settings Page</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
