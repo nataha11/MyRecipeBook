@@ -24,7 +24,7 @@ if __name__ == '__main__':
 	app = QApplication(sys.argv)
 
 	# create the instance of our Window
-	window = recipeTemplate("huy")
+	window = recipeTemplate("window")
 
 	# showing the window
 	window.show()
